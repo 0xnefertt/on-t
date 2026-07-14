@@ -1,5 +1,3 @@
-import { describe, expect, it } from 'vitest';
-
 import { healthResponseSchema } from './index.js';
 
 describe('healthResponseSchema', () => {
