@@ -1,14 +1,18 @@
 import cors from 'cors';
 import express from 'express';
+import type { RequestHandler } from 'express';
 import * as helmetModule from 'helmet';
 import { pinoHttp } from 'pino-http';
 
 import type { GreetingResponse, HealthResponse } from '@on-t/shared';
 
+const createHelmetMiddleware =
+  helmetModule.default as unknown as () => RequestHandler;
+
 export function createApp() {
   const app = express();
 
-  app.use(helmetModule.default());
+  app.use(createHelmetMiddleware());
   app.use(cors());
   app.use(express.json());
   app.use(pinoHttp());
