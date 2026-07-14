@@ -13,10 +13,16 @@
   },
   "dependencies": {
     "@on-t/shared": "workspace:*",
+    "@solana/client": "^1.7.0",
+    "@solana/kit": "^5.5.1",
+    "@solana/react-hooks": "^1.4.1",
+    "@solana/sysvars": "^4.0.0",
     "@tanstack/react-query": "^5.90.21",
     "next": "^16.2.10",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "viem": "^2.55.1",
+    "wagmi": "^3.7.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",

@@ -4,6 +4,8 @@ dist/
 .next/
 coverage/
 .turbo/
+.vercel/
+.gstack/
 *.tsbuildinfo
 .env
 .env.*

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { ApiStatus } from './components/ApiStatus';
 import { CounterExercise } from './components/CounterExercise';
 import { GoalForm } from './components/GoalForm';
@@ -21,6 +23,7 @@ export function ReactPracticePage() {
           <a href="#principles">Principles</a>
           <a href="#exercises">Exercises</a>
           <a href="#source-map">Source map</a>
+          <Link href="/web3">Web3 lab</Link>
         </nav>
       </header>
 

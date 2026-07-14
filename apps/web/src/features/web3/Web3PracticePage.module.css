@@ -1,0 +1,542 @@
+.page {
+  --ethereum: #7c68ff;
+  --solana: #14d99d;
+  min-height: 100vh;
+  color: #17201b;
+  background:
+    radial-gradient(
+      circle at 80% 4%,
+      rgb(124 104 255 / 14%),
+      transparent 30rem
+    ),
+    #f5f2e9;
+}
+
+.siteHeader {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 0 5vw;
+  border-bottom: 1px solid #17201b;
+  background: rgb(245 242 233 / 92%);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  color: inherit;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.brand span {
+  color: #667069;
+  font-weight: 500;
+}
+
+.siteHeader nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.siteHeader nav a,
+.textLink,
+.footer a {
+  color: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
+  gap: 5vw;
+  align-items: end;
+  padding: clamp(5rem, 10vw, 9rem) 5vw clamp(4rem, 7vw, 7rem);
+  border-bottom: 1px solid #17201b;
+}
+
+.kicker,
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(3.4rem, 8vw, 8rem);
+  line-height: 0.86;
+  letter-spacing: -0.075em;
+}
+
+.heroIntro {
+  max-width: 34rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1.5;
+}
+
+.safetyNote {
+  padding: 1rem 1.1rem;
+  border-left: 4px solid #ff5c35;
+  background: #fffdf7;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.chainGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: #17201b;
+  border-bottom: 1px solid #17201b;
+}
+
+.chainCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 42rem;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  overflow: hidden;
+  background: #fffdf7;
+}
+
+.chainCard::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 0 0 0 100%;
+  content: '';
+  opacity: 0.18;
+}
+
+.ethereumCard::before {
+  background: var(--ethereum);
+}
+
+.solanaCard::before {
+  background: var(--solana);
+}
+
+.chainHeader {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.chainHeader h2 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  letter-spacing: -0.06em;
+}
+
+.networkBadge {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid currentcolor;
+  border-radius: 999px;
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.chainDescription {
+  max-width: 36rem;
+  min-height: 4.5rem;
+  margin: 1.5rem 0 2.5rem;
+  color: #515b54;
+  line-height: 1.55;
+}
+
+.connectSection,
+.walletDetails {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.connectSection {
+  padding: 1.5rem;
+  border: 1px dashed #8a918a;
+  background: #f5f2e9;
+}
+
+.connectSection > p,
+.loadingMessage,
+.walletHint {
+  margin: 0;
+  color: #515b54;
+  line-height: 1.5;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primaryButton,
+.secondaryButton,
+.ghostButton {
+  min-height: 2.8rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #17201b;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.primaryButton {
+  color: #fffdf7;
+  background: #17201b;
+}
+
+.secondaryButton {
+  color: #17201b;
+  background: #d8ff52;
+}
+
+.ghostButton {
+  color: #17201b;
+  background: transparent;
+}
+
+.primaryButton:hover:not(:disabled),
+.secondaryButton:hover:not(:disabled),
+.ghostButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 #17201b;
+}
+
+.primaryButton:disabled,
+.secondaryButton:disabled,
+.ghostButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.walletDetails dl {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  background: #c9cdc5;
+  border: 1px solid #c9cdc5;
+}
+
+.walletDetails dl div {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  background: #f5f2e9;
+}
+
+.walletDetails dt {
+  color: #667069;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.walletDetails dd {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: monospace;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.networkWarning {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid #ff5c35;
+  background: #fff1ec;
+}
+
+.networkWarning p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.signForm {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.signForm label {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.signForm textarea {
+  width: 100%;
+  padding: 0.9rem;
+  resize: vertical;
+  border: 1px solid #17201b;
+  border-radius: 0;
+  color: #17201b;
+  background: #fffdf7;
+  font: 0.9rem/1.5 monospace;
+}
+
+.resultBox {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #17201b;
+  background: #edfbc6;
+}
+
+.resultBox strong {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resultBox code {
+  overflow-wrap: anywhere;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.errorMessage {
+  margin: 1.2rem 0 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #b72424;
+  color: #801616;
+  background: #ffeded;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.sourceNote {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.sourceNote summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sourceNote p {
+  color: #515b54;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.sourceNote code {
+  color: #17201b;
+  font-weight: 700;
+}
+
+.learningSection,
+.compareSection {
+  padding: clamp(4rem, 8vw, 8rem) 5vw;
+  border-bottom: 1px solid #17201b;
+}
+
+.learningSection {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.75fr) minmax(0, 1.25fr);
+  gap: 8vw;
+}
+
+.sectionHeading h2,
+.compareSection h2 {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.sectionHeading > p:last-child {
+  max-width: 32rem;
+  color: #515b54;
+  line-height: 1.6;
+}
+
+.stepList {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #17201b;
+  list-style: none;
+}
+
+.stepList li {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #17201b;
+}
+
+.stepList > li > span {
+  color: #ff5c35;
+  font-family: monospace;
+  font-weight: 900;
+}
+
+.stepList h3,
+.stepList p {
+  margin: 0;
+}
+
+.stepList h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.25rem;
+}
+
+.stepList p {
+  color: #515b54;
+  line-height: 1.5;
+}
+
+.compareSection {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.75fr) minmax(0, 1.25fr);
+  gap: 8vw;
+  background: #d8ff52;
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  align-self: start;
+  background: #17201b;
+  border: 1px solid #17201b;
+}
+
+.comparisonGrid article {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #fffdf7;
+}
+
+.comparisonGrid span {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.comparisonGrid code {
+  color: #6a57db;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.comparisonGrid p {
+  margin: 0;
+  color: #515b54;
+  line-height: 1.5;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 10rem;
+  padding: 2rem 5vw;
+  color: #fffdf7;
+  background: #17201b;
+}
+
+.footer p {
+  margin: 0.35rem 0 0;
+  color: #b9c0ba;
+}
+
+.footer a {
+  color: #d8ff52;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .learningSection,
+  .compareSection {
+    grid-template-columns: 1fr;
+  }
+
+  .chainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chainCard {
+    min-height: 38rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .siteHeader {
+    align-items: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .siteHeader nav {
+    flex-direction: column;
+    gap: 0.45rem;
+    align-items: flex-end;
+  }
+
+  .siteHeader nav a:not(:last-child) {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 17vw, 5rem);
+  }
+
+  .chainHeader,
+  .networkWarning,
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .chainHeader {
+    display: flex;
+  }
+
+  .comparisonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    gap: 1.5rem;
+  }
+}

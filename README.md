@@ -6,6 +6,7 @@ A full-stack monorepo for learning frontend and backend development with TypeScr
 
 - **Workspace:** pnpm and Turborepo
 - **Frontend:** Next.js App Router, React, and TanStack Query
+- **Web3:** Wagmi and Viem for Ethereum; Solana Client, Kit, and React Hooks for Solana
 - **Backend:** Express, Zod, and Pino
 - **Shared:** `@on-t/shared` for API schemas and shared types
 - **Quality:** TypeScript 7 native compiler, ESLint, Prettier, and Jest
@@ -82,6 +83,29 @@ apps/web/src/features/react-practice/
 ```
 
 Change one type or state transition at a time, run `pnpm typecheck`, and use the compiler error as feedback.
+
+## Web3 practice page
+
+The `/web3` route keeps Ethereum and Solana domain types separate while teaching the same wallet lifecycle on both chains:
+
+- Connect an injected Ethereum wallet on Sepolia
+- Connect a Wallet Standard Solana wallet on Devnet
+- Read the connected public address and testnet balance
+- Sign a message without sending funds
+- Inspect the address in the appropriate block explorer
+
+Read the feature in this order:
+
+```text
+apps/web/src/features/web3/
+├── evm/config.ts                 # Sepolia chain, transport, and connector
+├── evm/EvmWalletPanel.tsx        # Wagmi hooks and Viem formatting
+├── solana/SolanaWalletPanel.tsx  # Wallet Standard discovery and capabilities
+├── utils.ts                      # Chain-neutral display helpers
+└── Web3PracticePage.tsx          # Shared learning page composition
+```
+
+The default public RPC endpoints are suitable for learning. For a production service, configure authenticated provider URLs with the optional variables documented in `.env.example`. Wallet signing always stays in the browser wallet; never put a seed phrase or private key in an environment file.
 
 ### TypeScript toolchain
 
