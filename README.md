@@ -6,6 +6,7 @@ A full-stack monorepo for learning frontend and backend development with TypeScr
 
 - **Workspace:** pnpm and Turborepo
 - **Frontend:** Next.js App Router, React, Tailwind CSS, Motion, and TanStack Query
+- **3D:** Three.js with direct WebGL scene lifecycle management
 - **Web3:** Wagmi and Viem for Ethereum; Solana Client, Kit, and React Hooks for Solana
 - **Backend:** Express, Zod, and Pino
 - **Shared:** `@on-t/shared` for API schemas and shared types
@@ -119,6 +120,17 @@ The `/motion` route connects animation concepts to live controls and visible cod
 - Respect `prefers-reduced-motion` in CSS, Motion, and scroll effects
 
 Start with `apps/web/src/features/motion/MotionPracticePage.tsx`, then inspect the animation definitions in `apps/web/src/app/globals.css`.
+
+## Three.js practice page
+
+The `/three` route is an interactive WebGL lab for scene construction and rendering:
+
+- Swap geometries and physical materials in a live Three.js scene
+- Follow the scene, camera, renderer, and mesh relationship
+- Explore point clouds, lighting, camera response, and animation loops
+- Practice resource cleanup, pixel-ratio limits, and reduced-motion behavior
+
+The complete scene lifecycle lives in `apps/web/src/features/three/ThreePracticePage.tsx`.
 
 ### TypeScript toolchain
 

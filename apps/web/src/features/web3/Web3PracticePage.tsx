@@ -41,6 +41,7 @@ export function Web3PracticePage() {
           <a href="#learning-path">Learning path</a>
           <Link href="/">React lab</Link>
           <Link href="/motion">Motion lab</Link>
+          <Link href="/three">Three.js lab</Link>
         </nav>
       </header>
 

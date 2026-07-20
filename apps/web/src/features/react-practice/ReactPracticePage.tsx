@@ -25,6 +25,7 @@ export function ReactPracticePage() {
           <a href="#source-map">Source map</a>
           <Link href="/web3">Web3 lab</Link>
           <Link href="/motion">Motion lab</Link>
+          <Link href="/three">Three.js lab</Link>
         </nav>
       </header>
 

@@ -354,6 +354,9 @@ export function MotionPracticePage() {
           <Link className="underline-offset-4 hover:underline" href="/web3">
             Web3 lab
           </Link>
+          <Link className="underline-offset-4 hover:underline" href="/three">
+            Three.js lab
+          </Link>
         </nav>
       </header>
 
@@ -734,6 +737,9 @@ export function MotionPracticePage() {
           </Link>
           <Link className="underline underline-offset-4" href="/web3">
             Web3 lab
+          </Link>
+          <Link className="underline underline-offset-4" href="/three">
+            Three.js lab
           </Link>
         </div>
       </footer>
