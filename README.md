@@ -5,7 +5,7 @@ A full-stack monorepo for learning frontend and backend development with TypeScr
 ## Tech stack
 
 - **Workspace:** pnpm and Turborepo
-- **Frontend:** Next.js App Router, React, and TanStack Query
+- **Frontend:** Next.js App Router, React, Tailwind CSS, Motion, and TanStack Query
 - **Web3:** Wagmi and Viem for Ethereum; Solana Client, Kit, and React Hooks for Solana
 - **Backend:** Express, Zod, and Pino
 - **Shared:** `@on-t/shared` for API schemas and shared types
@@ -106,6 +106,19 @@ apps/web/src/features/web3/
 ```
 
 The default public RPC endpoints are suitable for learning. For a production service, configure authenticated provider URLs with the optional variables documented in `.env.example`. Wallet signing always stays in the browser wallet; never put a seed phrase or private key in an environment file.
+
+## Tailwind Motion practice page
+
+The `/motion` route connects animation concepts to live controls and visible code:
+
+- Compose transition duration, easing, delay, transform, opacity, and transform origin utilities
+- Replay custom `@keyframes` sequences with staggered delays
+- Reveal elements with `IntersectionObserver`
+- Compare CSS transitions with Motion spring physics and drag gestures
+- Explore sticky positioning, overflow, z-index, scroll-linked timelines, and parallax
+- Respect `prefers-reduced-motion` in CSS, Motion, and scroll effects
+
+Start with `apps/web/src/features/motion/MotionPracticePage.tsx`, then inspect the animation definitions in `apps/web/src/app/globals.css`.
 
 ### TypeScript toolchain
 

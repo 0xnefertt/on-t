@@ -1,3 +1,73 @@
+@layer theme, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@theme {
+  --animate-drift: drift 5s ease-in-out infinite;
+  --animate-orbit: orbit 9s linear infinite;
+  --animate-scan: scan 3.5s ease-in-out infinite;
+
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotate(-2deg);
+    }
+    50% {
+      transform: translate3d(0, -14px, 0) rotate(2deg);
+    }
+  }
+
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes scan {
+    0%,
+    100% {
+      transform: translateX(-115%);
+    }
+    50% {
+      transform: translateX(315%);
+    }
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-grow {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+[data-scroll-lab] {
+  view-timeline-name: --scroll-lab;
+  view-timeline-axis: block;
+}
+
+[data-scroll-progress] {
+  animation: scroll-grow linear both;
+  animation-timeline: --scroll-lab;
+  animation-range: entry 0% exit 100%;
+  transform-origin: left;
+}
+
 :root {
   --ink: #17201b;
   --paper: #f5f2e9;
@@ -61,7 +131,14 @@ select:focus-visible {
   *,
   *::before,
   *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  [data-scroll-progress] {
+    animation: none;
+    transform: scaleX(1);
   }
 }
